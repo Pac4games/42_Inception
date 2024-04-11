@@ -1,0 +1,19 @@
+Pulling new docker images:
+docker pull [image name]
+
+Creating a new container:
+docker run -dt --name [container name] [image name]
+{
+	-d: run the container in the background and print its ID;
+	-t: allocate a pseudo-TTY, enabling I/O for command execution;
+}
+
+Running an already existing container:
+docker exec -it [container name] [command]
+{
+	// Note that to enable a shell with this command you will need to pass a shell as the
+	// [command] parameter, such as "bash".
+
+	-i: keep STDIN open even if not attached, allowing to send input;
+	-t: same as "docker run";
+}
