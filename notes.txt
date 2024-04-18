@@ -1,5 +1,8 @@
-Pulling new docker images:
+Pulling new Docker images:
 docker pull [image name]
+
+Note that you can always use a container's ID instead of its name when passing it as an argument
+to a command.
 
 Creating a new container:
 docker run -dt --name [container name] [image name]
@@ -8,7 +11,17 @@ docker run -dt --name [container name] [image name]
 	-t: allocate a pseudo-TTY, enabling I/O for command execution;
 }
 
-Running an already existing container:
+
+Deleting an existing container:
+docker rm [container name]
+
+Starting a container:
+docker start [container name]
+
+Stopping a container:
+docker stop [container name]
+
+Running a command inside a container:
 docker exec -it [container name] [command]
 {
 	// Note that to enable a shell with this command you will need to pass a shell as the
