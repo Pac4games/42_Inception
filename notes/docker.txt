@@ -30,3 +30,9 @@ docker exec -it [container name] [command]
 	-i: keep STDIN open even if not attached, allowing to send input;
 	-t: same as "docker run";
 }
+
+Copying files into a container:
+docker cp [src path] [container name]:[dst path]
+{
+	// The container does not need to be running for this operation
+}
