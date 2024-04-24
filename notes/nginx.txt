@@ -22,3 +22,7 @@ In a real world scenario, a certificate signing request (CSR) would also need to
 generated so the certificate can be signed by a Certificate Authority (CA). 
 To do so:
 $ openssl req -new -key [key outfile name] -out [request outfile name]
+
+In the nginx config:
+- We use port 443 because it is the standard port used to forward an HTTPS connection, which is a
+HTTP connection that uses SSL or TSL to encrypt the connection and avoid MIM attacks.

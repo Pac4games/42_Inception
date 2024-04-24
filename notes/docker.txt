@@ -9,6 +9,8 @@ $ docker run -dt --name [container name] [image name]
 {
 	-d: run the container in the background and print its ID;
 	-t: allocate a pseudo-TTY, enabling I/O for command execution;
+	
+	// Some containers need to be created with "-p" in order to forward the host system's ports
 }
 
 

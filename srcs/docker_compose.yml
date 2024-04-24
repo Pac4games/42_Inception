@@ -1,0 +1,8 @@
+version: "3"
+services:
+  nginx:
+    build: ./nginx
+    image: inception_nginx:testing
+    ports:
+      - "443:443"
+    container_name: my_nginx
