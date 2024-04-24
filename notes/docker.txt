@@ -1,11 +1,11 @@
 Pulling new Docker images:
-docker pull [image name]
+$ docker pull [image name]
 
 Note that you can always use a container's ID instead of its name when passing it as an argument
 to a command.
 
 Creating a new container:
-docker run -dt --name [container name] [image name]
+$ docker run -dt --name [container name] [image name]
 {
 	-d: run the container in the background and print its ID;
 	-t: allocate a pseudo-TTY, enabling I/O for command execution;
@@ -13,16 +13,16 @@ docker run -dt --name [container name] [image name]
 
 
 Deleting an existing container:
-docker rm [container name]
+$ docker rm [container name]
 
 Starting a container:
-docker start [container name]
+$ docker start [container name]
 
 Stopping a container:
-docker stop [container name]
+$ docker stop [container name]
 
 Running a command inside a container:
-docker exec -it [container name] [command]
+$ docker exec -it [container name] [command]
 {
 	// Note that to enable a shell with this command you will need to pass a shell as the
 	// [command] parameter, such as "bash".
@@ -32,7 +32,7 @@ docker exec -it [container name] [command]
 }
 
 Copying files into a container:
-docker cp [src path] [container name]:[dst path]
+$ docker cp [src path] [container name]:[dst path]
 {
 	// The container does not need to be running for this operation
 }

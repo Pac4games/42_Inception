@@ -1,14 +1,24 @@
+To generate an SSL/TSL private key:
+$ openssl genpkey -algorithm RSA -out [key outfile name]
+
 To generate a TSL v1.3 certificate:
-openssl req -x509 -newkey rsa:4096 -keyout [key outfile name] -out [cert. outfile name] -days [num] -nodes
+$ openssl req -x509 -newkey rsa:4096 -keyout [key outfile name] -out [cert. outfile name] -days [num] -nodes
 {
 	req: create a certificate signing request;
-	-x509: this makes the certificate self-signed, meaning it's for personal uses only;
-	-newkey rsa:4096: generates a new RSA private key with a size of 4096 bits;
+	-x509: this makes the certificate self-signed, making it for personal use only;
+	-newkey rsa:4096: generates a new SSL/TSL RSA private key with a size of 4096 bits;
 	-keyout: estabilishes the name of the outfile for the key;
 	-out: estabilishes the name of the outfile for the certificate;
 	-days: specifies the number of days this certificate is valid for after its creation;
 	-nodes: specifies the key should not be encrypted with a password;
 
+	// Thanks to the "-newkey" flag, no private key needs to previously created.
+
 	// The keys found in the "Certificates" folder were generated with a 3650 validity for
 	// testing purposes.
 }
+
+In a real world scenario, a certificate signing request (CSR) would also need to be 
+generated so the certificate can be signed by a Certificate Authority (CA). 
+To do so:
+$ openssl req -new -key [key outfile name] -out [request outfile name]
