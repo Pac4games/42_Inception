@@ -2,5 +2,6 @@ version: "3"
 services:
   test:
     image: debian:bullseye
+    command: tail -f /dev/null
     ports:
       - "443:443"
