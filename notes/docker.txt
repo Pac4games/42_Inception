@@ -23,6 +23,12 @@ $ docker start [container name]
 Stopping a container:
 $ docker stop [container name]
 
+Check running containers:
+$ docker ps
+{
+	// Additionally you can provide the "-a" flag to see all containers, even inactive ones.
+}
+
 Running a command inside a container:
 $ docker exec -it [container name] [command]
 {
