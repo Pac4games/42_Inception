@@ -1,7 +1,6 @@
-version: "3"
 services:
-  test:
-    image: debian:bullseye
-    command: tail -f /dev/null
+  nginx:
+    build: ./nginx
+    container_name: nginx
     ports:
       - "443:443"
