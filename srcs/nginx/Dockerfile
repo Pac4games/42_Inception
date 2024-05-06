@@ -1,5 +1,8 @@
 FROM debian:bullseye
 
+ARG PACKAGES="	nginx \
+		openssl"
+
 RUN apt update && apt upgrade -y && apt install -y nginx openssl
 COPY Certificates/localhost.key /etc/ssl/private/
 COPY Certificates/localhost.crt /etc/ssl/certs/
