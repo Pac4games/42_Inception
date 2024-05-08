@@ -32,7 +32,7 @@ $ docker ps
 Running a command inside a container:
 $ docker exec -it [container name] [command]
 {
-	// Note that to enable a shell with this command you will need to pass a shell as the
+	// Note that to use a shell with this command you will need to pass a shell as the
 	// [command] parameter, such as "bash".
 
 	-i: keep STDIN open even if not attached, allowing to send input;
