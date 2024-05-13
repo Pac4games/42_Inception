@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if (!(test -d /var/lib/mysql/$WP_DATABASE)); then
+if (! test -d /var/lib/mysql/$WP_DATABASE ); then
 	/etc/init.d/mysql start
 	sleep 1
 	mysql -u root -e "CREATE USER '"$DB_USER"'@'"$WP_CONT_NAME.$NETWORK_NAME"' IDENTIFIED BY '"$DB_PWD"'; GRANT ALL PRIVILEGES ON *. * TO '"$DB_USER"'@'"$WP_CONT_NAME.$NETWORK_NAME"'; FLUSH PRIVILEGES;" \
