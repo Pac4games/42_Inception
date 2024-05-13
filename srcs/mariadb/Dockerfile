@@ -1,8 +1,8 @@
 FROM debian:oldstable
 
-ARG PACKAGES="	mariadb-server" 
+ARG PACKAGES="	mariadb-server"
 
-RUN apt update && apt upgrade && apt install -y $PACKAGES
+RUN apt update && apt upgrade -y && apt install -y $PACKAGES
 RUN mysql_install_db --user=mysql
 
 COPY setup_mariadb.sh /home/
