@@ -1,6 +1,51 @@
 services:
-  nginx:
-    build: ./nginx
-    container_name: nginx
-    ports:
-      - "443:443"
+	mariadb:
+		build: ./mariadb
+		image: mariadb_inception:test
+		container_name: mariadb_inception
+		expose:
+			- "3306"
+		env_file:
+			- .env
+		volumes:
+			- mdb_vol:/var/lib/mysql
+	wordpress:
+		depends_on:
+			- mariadb
+		build: ./wordpress
+		image: wordpress_inception:test
+		container_name: wordpress_inception
+		expose:
+			- "9000"
+		env_file:
+			- .env
+		volumes:
+			- wp_vol:/var/www/html/test.icl.es/
+	nginx:
+		depends_on:
+			- wordpress
+    		build: ./nginx
+		image: nginx_inception:test
+    		container_name: nginx_inception
+    		ports:
+      			- "443:443"
+		volumes:
+			- wp_vol:/var/www/html/test.icl.es/
+volumes:
+	wp_vol:
+		name: wp_vol
+		driver: local
+		driver_opts:
+			type: 'none'
+			o: 'bind'
+			device: /home/paugonca/Docker_volumes/wordpress_volume
+	mdb_vol:
+		name: mdb_vol
+		driver: local
+		driver_opts:
+			type: 'none'
+			o: 'bind'
+			device: /home/paugonca/Docker_volumes/mariadb_volume
+networks:
+	default:
+		name: test_net
