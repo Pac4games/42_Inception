@@ -17,4 +17,5 @@ RUN mkdir -p /var/www/html/test.icl.es \
 RUN sed -i 's:listen = /run/php/php7.4-fpm.sock:listen = 9000:g' /etc/php/7.4/fpm/pool.d/www.conf
 
 COPY setup_wordpress.sh /home/
+ENTRYPOINT ["/home/setup_wordpress.sh"]
 CMD ["php-fpm7.4", "-F", "-R"]
