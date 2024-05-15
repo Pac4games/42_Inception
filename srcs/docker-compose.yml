@@ -9,6 +9,8 @@ services:
       - .env
     volumes:
       - mdb_vol:/var/lib/mysql
+    networks:
+      - test_net
 
   wordpress:
     depends_on:
@@ -22,6 +24,8 @@ services:
       - .env
     volumes:
       - wp_vol:/var/www/html/paugonca.42.fr/
+    networks:
+      - test_net
 
   nginx:
     depends_on:
@@ -33,6 +37,8 @@ services:
             - "443:443"
     volumes:
       - wp_vol:/var/www/html/paugonca.42.fr/
+    networks:
+      - test_net
 
 volumes:
   wp_vol:
@@ -52,5 +58,5 @@ volumes:
       device: /home/paugonca/Docker_volumes/mariadb_volume
 
 networks:
-  default:
-    name: test_net
+  test_net:
+    driver: bridge
