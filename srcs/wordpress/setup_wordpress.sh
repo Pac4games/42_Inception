@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /var/www/html/test.icl.es
+cd /var/www/html/paugonca.42.fr
 
 IDX=0
 while [ $IDX -lt 10 ] ; do
@@ -12,7 +12,7 @@ while [ $IDX -lt 10 ] ; do
 		--dbpass=$DB_PWD
 		
 		wp core install --allow-root \
-		--url=test.icl.es \
+		--url=paugonca.42.fr \
 		--title="🍫 ⋆ 🍑  🎀  𝐵𝑒𝓅𝒾𝓈  🎀  🍑 ⋆ 🍫" \
 		--admin_user=$ADMIN_USER \
 		--admin_password=$ADMIN_PWD \

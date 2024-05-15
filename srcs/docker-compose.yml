@@ -21,7 +21,7 @@ services:
     env_file:
       - .env
     volumes:
-      - wp_vol:/var/www/html/test.icl.es/
+      - wp_vol:/var/www/html/paugonca.42.fr/
 
   nginx:
     depends_on:
@@ -32,7 +32,7 @@ services:
     ports:
             - "443:443"
     volumes:
-      - wp_vol:/var/www/html/test.icl.es/
+      - wp_vol:/var/www/html/paugonca.42.fr/
 
 volumes:
   wp_vol:
