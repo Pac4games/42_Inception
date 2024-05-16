@@ -1,17 +1,5 @@
 #!/bin/bash
 
-echo "DB_HOST: $DB_HOST"
-echo "NETWORK_NAME: $NETWORK_NAME"
-echo "WP_DATABASE: $WP_DATABASE"
-echo "DB_USER: $DB_USER"
-echo "DB_PWD: $DB_PWD"
-echo "ADMIN_USER: $ADMIN_USER"
-echo "ADMIN_PWD: $ADMIN_PWD"
-echo "ADMIN_EMAIL: $ADMIN_EMAIL"
-echo "WP_USER: $WP_USER"
-echo "WP_USER_EMAIL: $WP_USER_EMAIL"
-echo "WP_USER_PWD: $WP_USER_PWD"
-
 cd /var/www/html/paugonca.42.fr
 
 IDX=0

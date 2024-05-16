@@ -25,4 +25,4 @@ $ openssl req -new -key [key outfile name] -out [request outfile name]
 
 In the nginx config:
 - We use port 443 because it is the standard port used to forward an HTTPS connection, which is a
-HTTP connection that uses SSL or TSL to encrypt the connection and avoid MIM attacks.
+HTTP connection that uses SSL or TSL to encrypt the connection and avoid MiM attacks.
