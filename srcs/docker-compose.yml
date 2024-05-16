@@ -57,4 +57,5 @@ volumes:
 
 networks:
   test_net:
+    name: test_net
     driver: bridge
