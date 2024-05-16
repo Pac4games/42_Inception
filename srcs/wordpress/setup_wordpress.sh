@@ -4,7 +4,7 @@ cd /var/www/html/paugonca.42.fr
 
 IDX=0
 while [ $IDX -lt 10 ] ; do
-	if (nc -w 3 -zv $DB_HOST.$NETWORK_NAME 3306) ; then
+	if (nc -w 3 -zv $DB_HOST 3306) ; then
 		wp config create --allow-root \
 		--dbname=$WP_DATABASE \
 		--dbhost=$DB_HOST \
@@ -21,11 +21,13 @@ while [ $IDX -lt 10 ] ; do
 		wp user create --allow-root \
 		$WP_USER $WP_USER_EMAIL \
 		--user_pass=$WP_USER_PWD
+
+		break
 	else
 		sleep 1
 		((IDX++))
 	fi
-	done
+done
 
 if [ $IDX -eq 10 ] ; then
 	echo "Server connection timed out" >&2

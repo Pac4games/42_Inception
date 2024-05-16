@@ -34,7 +34,7 @@ services:
     image: nginx_inception:test
     container_name: nginx_inception
     ports:
-            - "443:443"
+      - "443:443"
     volumes:
       - wp_vol:/var/www/html/paugonca.42.fr/
     networks:
@@ -42,7 +42,6 @@ services:
 
 volumes:
   wp_vol:
-    name: wp_vol
     driver: local
     driver_opts:
       type: 'none'
@@ -50,7 +49,6 @@ volumes:
       device: /home/paugonca/Docker_volumes/wordpress_volume
 
   mdb_vol:
-    name: mdb_vol
     driver: local
     driver_opts:
       type: 'none'
