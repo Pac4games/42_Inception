@@ -10,7 +10,7 @@ services:
     volumes:
       - mdb_vol:/var/lib/mysql
     networks:
-      - test_net
+      - undernet
 
   wordpress:
     depends_on:
@@ -25,7 +25,7 @@ services:
     volumes:
       - wp_vol:/var/www/html/paugonca.42.fr/
     networks:
-      - test_net
+      - undernet
 
   nginx:
     depends_on:
@@ -38,7 +38,7 @@ services:
     volumes:
       - wp_vol:/var/www/html/paugonca.42.fr/
     networks:
-      - test_net
+      - undernet
 
 volumes:
   wp_vol:
@@ -56,6 +56,6 @@ volumes:
       device: /home/paugonca/Docker_volumes/mariadb_volume
 
 networks:
-  test_net:
-    name: test_net
+  undernet:
+    name: undernet
     driver: bridge
