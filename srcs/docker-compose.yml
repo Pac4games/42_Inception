@@ -47,7 +47,7 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: /home/paugonca/Docker_volumes/wordpress_volume
+      device: ~/Docker_volumes/wordpress_volume
 
   mdb_vol:
     name: mdb_vol
@@ -55,7 +55,7 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: /home/paugonca/Docker_volumes/mariadb_volume
+      device: ~/Docker_volumes/mariadb_volume
 
 networks:
   undernet:
