@@ -1,0 +1,23 @@
+Logging into MariaDB as root:
+$ mysql -u root -p
+{
+	-u: user;
+	-p: prompt for password;
+}
+
+The following commands are to be executed inside MariaDB shell!
+
+Display databases:
+SHOW DATABASES;
+
+Select a database:
+USE [database name];
+
+List all tables of the selected database:
+SHOW TABLES;
+
+Describe the structure of a table:
+DESCRIBE [table name];
+
+View the contents of a table:
+SELECT * FROM [table name];
